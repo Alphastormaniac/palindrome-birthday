@@ -107,16 +107,55 @@ function getNextDate(date) {
         month = 1;
         year++ 
     }
+
+    return {
+        day: day,
+        month: month,
+        year: year,
+      };
 }
-
-function getNextPalindromeDate(date) {
-
-}
-
-var date = {
-    day: 12,
-    month: 11,
-    year: 2020
-};
-
-console.log(checkPalindromeForAllDateFormats(date))
+function getNextPalindromeDate(date){
+    var ctr = 0;
+    var nextDate = getNextDate(date);
+  
+    while(1){
+      ctr++;
+      var isPalindrome = checkPalindromeForAllDateFormats(nextDate);
+      if(isPalindrome){
+        break;
+      }
+      nextDate = getNextDate(nextDate);
+    }
+    return [ctr, nextDate];
+  }
+  
+  var dateInputRef = document.querySelector('#bday-input');
+  var showBtnRef = document.querySelector('#output-btn');
+  var resultRef = document.querySelector('#output');
+  
+  function clickHandler(e){
+    var bdayString = dateInputRef.value;
+    
+    if(bdayString !== ''){
+      var listOfDate = bdayString.split('-'); // 
+  
+      var date = {
+        day: Number(listOfDate[2]),
+        month: Number(listOfDate[1]),
+        year: Number(listOfDate[0])
+      };
+      
+      var isPalindrome = checkPalindromeForAllDateFormats(date);
+  
+      if(isPalindrome){
+         resultRef.innerText = 'Yaaay! Your birthday is a Palindrome!! 🥳🥳';
+      }
+      else {
+        var [ctr, nextDate] = getNextPalindromeDate(date);
+  
+        resultRef.innerText = `The next palindrome date is ${nextDate.day}-${nextDate.month}-${nextDate.year}, shoot...you missed it by ${ctr} days! 😔`;
+      }
+    }
+  }
+  
+  showBtnRef.addEventListener('click', clickHandler);
