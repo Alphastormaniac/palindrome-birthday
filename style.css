@@ -6,7 +6,21 @@ body{
    background-color: #0a66c2;
 }
 
+input{
+    width: 300px;
+    display: block;
+    margin: auto;
+    border: 3px solid black;
+}
 
+button{
+    max-width: fit-content;
+    display: inline-block;
+    margin: auto;
+    margin-top: 1rem;
+    border-radius: 0.5rem;
+    border: 3px solid black;
+}
 .container {
     padding: 1rem;
     position: relative;
