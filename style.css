@@ -1,0 +1,107 @@
+*{
+    color: black;
+}
+
+body{
+   background-color: #0a66c2;
+}
+
+
+.container {
+    padding: 1rem;
+    position: relative;
+    top: 10rem;
+    display: flex;
+    flex-direction: column;
+    max-width: 50%;
+    text-align: center;
+    margin: auto;
+    color: white;
+    font-size: large;
+}
+
+/* lists */
+
+.list-nonbullet {
+    list-style: none;
+    padding-inline-start: 0px;
+}
+
+.list-item-inline {
+    display: inline-flex;
+    padding: 0rem 1rem;
+}
+
+.link {
+    text-decoration: none;
+    box-sizing: border-box;
+    padding: 0.5rem 1rem;
+    margin: 1rem;
+}
+
+
+/* footers */
+
+.footer {
+    text-align: center;
+    color: white;
+    border-radius: 0.5rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+
+.footer-header {
+    font-size: large;
+    
+}
+
+.footer .link {
+    color: white;
+}
+
+.footer ul {
+    padding-inline-start: 0px;
+}
+
+
+
+.fa-github:link,
+.fa-github:hover {
+    color: #495057;
+}
+
+.fa-twitter:link,
+.fa-twitter:hover {
+    color: #1da1f2
+}
+
+.fa-linkedin-in:link,
+.fa-linkedin-in:hover {
+    color: #0a66c2;
+}
+
+.fa-instagram:link,
+.fa-instagram:hover {
+    color: #c32aa3;
+}
+
+.fa-snapchat-ghost:link,
+.fa-snapchat-ghost:hover {
+    color: #fffc00;
+}
+
+.footer-icons{
+    transition:color 0.2s;
+    font-size: 1.5rem;
+    padding-top: 1rem;
+}
+
+
+.snap-code {
+    height: 200px;
+    width: 200px;
+    align-self: center;
+    padding: 3rem;
+}
